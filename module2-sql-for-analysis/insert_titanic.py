@@ -12,7 +12,7 @@ conn = psycopg2.connect(dbname = dbname, user = user, password = password, host 
 curs = conn.cursor()
 
 create_table = """
-    CREATE TABLE titanic_all (
+    CREATE TABLE titanic_all2 (
     survived INT,
     pclass INT,
     name VARCHAR,
@@ -24,16 +24,17 @@ create_table = """
     );
 """
 
-curs.execute(create_table)
+#curs.execute(create_table)
 
 for i in df.values:
     if "'" in i[2]:
         i[2] = i[2].replace("'","*")
     titanic_insert = """
-        INSERT INTO titanic_all
+        INSERT INTO titanic_all2
         (survived, pclass, name, sex, age, siblings_spouse, parent_child, fare)
         VALUES """ + str(tuple(i.tolist())) + ";"
     curs.execute(titanic_insert)
+
 
 curs.close()
 conn.commit()
