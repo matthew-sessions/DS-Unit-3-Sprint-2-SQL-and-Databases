@@ -134,6 +134,21 @@ interview screening questions (a form you fill when applying for a job):
   what is a situation where it is not appropriate?
 - What is "NewSQL", and what is it trying to achieve?
 
+1. The employee to Territory tables have a one-to-many relationship. In the 
+employee table, there are employee IDs associated to each employee. There is 
+only one employee ID for each employee, but each employee ID can have more than 
+one Territory ID.
+
+2.If you are a startup that needs funding and does not have the time to set up 
+a complex database mongodb is a reasonable choice. It is important to know that 
+MongoDB often leads to technical debt. If you are in a situation where the data 
+you insert and pull for the database must follow a very strict format, MongoDB 
+is not the best choice.
+
+3. NewSQL is a modern relational database management system that aims to provide 
+the same scalable performance as NoSQL while keeping the same guarantees of an ACIC
+database system.
+
 ### Part 5 - Turn it in!
 Add all the files you wrote (`demo_data.py`, `northwind.py`), as well as this
 file with your answers to part 4, to your weekly repo
